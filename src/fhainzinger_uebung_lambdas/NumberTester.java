@@ -10,7 +10,10 @@ package fhainzinger_uebung_lambdas;
  * @author fabia
  */
 public class NumberTester {
-    public NumberTester(String fileName){}
+    public NumberTester(String fileName)
+    {
+        fileName = "aufgabe3.txt";
+    }
     
     public void setOddEventTester(NumberTest oddTester) {}
     
