@@ -5,6 +5,13 @@
  */
 package fhainzinger_uebung_lambdas;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author fabia
@@ -13,8 +20,10 @@ public class NumberTester {
     private NumberTest oddTester;
     private NumberTest primeTester;
     private NumberTest palindromeTester;
-    
-    public NumberTester(String fileName) {}
+    private String fileName;
+    public NumberTester(String fileName) {
+        this.fileName = fileName;
+    }
     
     public void setOddEventTester(NumberTest oddTester) 
     {
@@ -30,5 +39,48 @@ public class NumberTester {
         this.palindromeTester = palindromeTester;
     }
     
-    public void testFile() {}
+    public void testFile() {
+        try(FileReader reader = new FileReader(fileName);
+                BufferedReader br = new BufferedReader(reader))
+        {
+            System.out.println("File wird gelesen ...");
+            int anzahl = Integer.parseInt(br.readLine());
+            for(int i = 0; i < anzahl; i++){
+                String s = br.readLine();
+                String[] arr = s.split(" ");
+                switch (Integer.parseInt(arr[0])) {
+                    case 1:
+                        if(oddTester.testNumber(Integer.parseInt(arr[1])) == true){
+                            System.out.println("EVEN");
+                        }
+                        else{
+                            System.out.println("ODD");
+                        }
+                        break;
+                    case 2:
+                        if(primeTester.testNumber(Integer.parseInt(arr[1])) == true){
+                            System.out.println("PRIME");
+                        }
+                        else{
+                            System.out.println("NO PRIME");
+                        }
+                        break;
+                    case 3:
+                        if(palindromeTester.testNumber(Integer.parseInt(arr[1])) == true){
+                            System.out.println("PALINDROME");
+                        }
+                        else{
+                            System.out.println("NO PALINDROME");
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(NumberTester.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(NumberTester.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
