@@ -15,7 +15,28 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        NumberTester asdf = new NumberTester("aufgabe3.txt");
+
+        asdf.setOddEventTester(number -> {
+            return number % 2 != 0;
+        });
+
+        asdf.setPrimeTester(number -> {
+            if (number <= 1) {
+                return false;
+            }
+            for (int i = 2; i < Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        });
+        
+//        asdf.setPalindromeTester(number -> 
+//        {
+//            System
+//        });
     }
-    
+
 }

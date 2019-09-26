@@ -10,15 +10,25 @@ package fhainzinger_uebung_lambdas;
  * @author fabia
  */
 public class NumberTester {
-    public NumberTester(String fileName)
+    private NumberTest oddTester;
+    private NumberTest primeTester;
+    private NumberTest palindromeTester;
+    
+    public NumberTester(String fileName) {}
+    
+    public void setOddEventTester(NumberTest oddTester) 
     {
-        fileName = "aufgabe3.txt";
+        this.oddTester = oddTester;
     }
     
-    public void setOddEventTester(NumberTest oddTester) {}
-    
-    public void setPrimeTester(NumberTest primeTester) {}
-    public void setPalindromeTester(NumberTest palindromeTester) {}
+    public void setPrimeTester(NumberTest primeTester)
+    {
+        this.primeTester = primeTester;
+    }
+    public void setPalindromeTester(NumberTest palindromeTester)
+    {
+        this.palindromeTester = palindromeTester;
+    }
     
     public void testFile() {}
 }
