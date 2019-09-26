@@ -33,10 +33,15 @@ public class Main {
             return true;
         });
         
-//        asdf.setPalindromeTester(number -> 
-//        {
-//            System
-//        });
+        asdf.setPalindromeTester(number -> 
+        {
+            String test = String.valueOf(number);
+            String reversetest = "";
+            for(int i = test.length() -1; i >= 0; i--){
+                reversetest = reversetest + test.charAt(i);
+            }
+            return test.equals(reversetest);
+        });
     }
 
 }
