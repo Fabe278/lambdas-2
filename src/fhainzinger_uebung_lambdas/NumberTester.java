@@ -25,6 +25,7 @@ public class NumberTester {
         this.fileName = fileName;
     }
     
+    
     public void setOddEventTester(NumberTest oddTester) 
     {
         this.oddTester = oddTester;
@@ -51,10 +52,10 @@ public class NumberTester {
                 switch (Integer.parseInt(arr[0])) {
                     case 1:
                         if(oddTester.testNumber(Integer.parseInt(arr[1])) == true){
-                            System.out.println("EVEN");
+                            System.out.println("ODD");
                         }
                         else{
-                            System.out.println("ODD");
+                            System.out.println("EVEN");
                         }
                         break;
                     case 2:

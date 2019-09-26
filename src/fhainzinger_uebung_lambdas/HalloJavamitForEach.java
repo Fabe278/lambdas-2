@@ -5,7 +5,7 @@
  */
 package fhainzinger_uebung_lambdas;
 
-import java.util.LinkedList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -13,25 +13,13 @@ import java.util.List;
  * @author fabia
  */
 public class HalloJavamitForEach {
-    public static void main(String[] args){
-        List<String> lw = new LinkedList<>();
-        HalloJavamitForEach main = new HalloJavamitForEach();
-        main.fill(lw);
+    public static void main(String[] args) {
+        List<String> liste = Arrays.asList("\nSelam ", "alejkum!");
+        for(String string : liste){
+            System.out.print(string);
+        }
         
-        for(int i = 0; i < lw.size(); i++){
-            System.out.println(lw.get(i));
-        }
-        System.out.println();
-        System.out.println("-------------------");
-        System.out.println();
-        lw.forEach(System.out::println);
-    }
-    
-    public void fill(List<String> lw){
-        String s = "Oh mei ";
-        for(int i = 0; i < 5; i++){
-            lw.add(s);
-            s = s + "Oh mei ";
-        }
-    }
+        liste.forEach((String s) -> System.out.print(s + " "));
+        liste.forEach(System.out::print);
+    }    
 }
