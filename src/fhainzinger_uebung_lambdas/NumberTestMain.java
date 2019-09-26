@@ -9,7 +9,7 @@ package fhainzinger_uebung_lambdas;
  *
  * @author fabia
  */
-public class Main {
+public class NumberTestMain {
 
     /**
      * @param args the command line arguments
