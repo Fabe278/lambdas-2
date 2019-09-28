@@ -23,4 +23,7 @@ public abstract class AbstractCalculator {
     public abstract Number subtract (Number a, Number b);
     public abstract Number multiply (Number a, Number b);
     public abstract Number divide (Number a, Number b);
+    
+    RationalCalculator rc = new RationalCalculator(add, subtract, multiply, divide);
+    
 }
