@@ -17,6 +17,10 @@ public class ComplexCalculator extends AbstractCalculator{
     
     public ComplexCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
         super(add, subtract, multiply, divide);
+        this.add = add;
+        this.subtract = subtract;
+        this.multiply = multiply;
+        this.divide = divide;
     }
 
     

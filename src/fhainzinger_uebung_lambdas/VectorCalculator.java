@@ -17,6 +17,10 @@ public class VectorCalculator extends AbstractCalculator{
 
     public VectorCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
         super(add, subtract, multiply, divide);
+        this.add = add;
+        this.subtract = subtract;
+        this.multiply = multiply;
+        this.divide = divide;
     }
 
     
