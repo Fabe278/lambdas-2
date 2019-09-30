@@ -89,19 +89,21 @@ public class CalculatorMain {
                 -> {
             Number n = new Number();
             n.setA(a.getA() - b.getA());
-            n.setB((a.getB() - b.getB()) * Math.sqrt(-1));
+            n.setB(a.getB() - b.getB());
             return n;
         };
         CalculationOperation cmultiply = (a, b)
                 -> {
             Number n = new Number();
-            n.setA(a.getA() * b.getA() - a.getB() * b.getB());
-            n.setB(a.getA() * b.getB() + (a.getB() + b.getA()) * Math.sqrt(-1));
+           n.setA(a.getA()*b.getA() - a.getB()*b.getB());
+            n.setB(a.getA()*b.getB() + a.getB()*b.getA());
             return n;
         };
         CalculationOperation cdivide = (a, b)
                 -> {
             Number n = new Number();
+            n.setA(a.getA()*b.getA()+a.getB()*b.getB()+a.getB()*b.getA()-a.getA()*b.getB());
+            n.setB(b.getA()*b.getA()+b.getB()*b.getB()+b.getA()*b.getA()+b.getB()*b.getB());
             return n;
         };
         rc = new RationalCalculator(add, subtract, multiply, divide);
@@ -214,23 +216,23 @@ public class CalculatorMain {
                 switch (operation) {
                     case 1:
                         output = cc.add(a, b);
-                        System.out.println("a = " + output.getA());
-                        System.out.println("b = " + output.getB());
+                        System.out.println("a = " + output.getA() + "+");
+                        System.out.println("b = " + output.getB() + "i");
                         break;
                     case 2:
                         output = cc.subtract(a, b);
-                        System.out.println("a = " + output.getA());
-                        System.out.println("b = " + output.getB());
+                        System.out.println("a = " + output.getA() + "+");
+                        System.out.println("b = " + output.getB() + "i");
                         break;
                     case 3:
                         output = cc.multiply(a, b);
-                        System.out.println("a = " + output.getA());
-                        System.out.println("b = " + output.getB());
+                        System.out.println("a = " + output.getA() + "+");
+                        System.out.println("b = " + output.getB() + "i");
                         break;
                     case 4:
                         output = cc.divide(a, b);
                         System.out.println("a = " + output.getA());
-                        System.out.println("b = " + output.getB());
+                        System.out.println("b = " + output.getB() + "i");
                         break;
                     case 5:
                         zahlEingeben(calculatorNumber);
