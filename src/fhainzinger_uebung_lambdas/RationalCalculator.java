@@ -10,6 +10,10 @@ package fhainzinger_uebung_lambdas;
  * @author fabia
  */
 public class RationalCalculator extends AbstractCalculator{
+    CalculationOperation add = null;
+    CalculationOperation subtract = null;
+    CalculationOperation multiply = null;
+    CalculationOperation divide = null;
 
     public RationalCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
         super(add, subtract, multiply, divide);
@@ -17,22 +21,22 @@ public class RationalCalculator extends AbstractCalculator{
 
     @Override
     public Number add(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return add.calc(a,b);
     }
 
     @Override
     public Number subtract(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return subtract.calc(a, b);
     }
 
     @Override
     public Number multiply(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return multiply.calc(a, b);
     }
 
     @Override
     public Number divide(Number a, Number b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return divide.calc(a, b);
     }
 
     
