@@ -216,17 +216,17 @@ public class CalculatorMain {
                 switch (operation) {
                     case 1:
                         output = cc.add(a, b);
-                        System.out.println("a = " + output.getA() + "+");
+                        System.out.println("a = " + output.getA());
                         System.out.println("b = " + output.getB() + "i");
                         break;
                     case 2:
                         output = cc.subtract(a, b);
-                        System.out.println("a = " + output.getA() + "+");
+                        System.out.println("a = " + output.getA());
                         System.out.println("b = " + output.getB() + "i");
                         break;
                     case 3:
                         output = cc.multiply(a, b);
-                        System.out.println("a = " + output.getA() + "+");
+                        System.out.println("a = " + output.getA());
                         System.out.println("b = " + output.getB() + "i");
                         break;
                     case 4:

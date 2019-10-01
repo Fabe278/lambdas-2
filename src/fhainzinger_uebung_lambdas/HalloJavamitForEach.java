@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class HalloJavamitForEach {
     public static void main(String[] args) {
-        List<String> liste = Arrays.asList("\nSelam ", "alejkum!");
+        List<String> liste = Arrays.asList("\nTest ", "Text!");
         for(String string : liste){
             System.out.print(string);
         }
